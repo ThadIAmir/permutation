@@ -1,3 +1,4 @@
+# we have to write a function that create permutations for us
 def permutations(nums):
     perms = [[]]
     for num in nums:
@@ -9,16 +10,15 @@ def permutations(nums):
         perms = new_perms
     return perms
 
-
 nums = []
 
 x = int(input("Enter n: "))
 
+for i in range(1, x + 1):
+    nums += permutations(range(1, i + 1))
+
 while x < 0:
     print("error: Please Enter a valid number!"),
     x = int(input("Enter n: "))
-
-for i in range(1, x + 1):
-    nums += permutations(range(1, i + 1))
 
 print(nums, "\n", "count:", len(nums))
